@@ -36,10 +36,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P          &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMICOLON  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_BRACKET
-                         &kp LGUI  &mo 2  &kp SPACE    &kp RET  &mo 1  &kp RALT
+&kp ESC    &kp Q  &kp W  &kp E     &kp R  &kp T             &kp Y            &kp U  &kp I      &kp O    &kp P          &kp BSPC
+&kp TAB    &kp A  &kp S  &kp D     &kp F  &kp G             &kp H            &kp J  &kp K      &kp L    &kp SEMICOLON  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B             &kp N            &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_BRACKET
+                         &kp LGUI  &mo 2  &kp LEFT_SHIFT    &kp RIGHT_SHIFT  &mo 1  &kp RALT
             >;
         };
 
@@ -54,7 +54,7 @@
 &kp ESCAPE  &kp ASTERISK  &kp SLASH  &kp N7        &kp N8        &kp N9          &kp K_MUTE  &kp C_VOL_DN  &kp UP_ARROW      &kp C_VOL_UP  &kp C_BRIGHTNESS_INC  &kp BSPC
 &bt BT_CLR  &kp PLUS      &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6    &kp F6      &kp LEFT      &kp DOWN_ARROW    &kp RIGHT     &kp C_BRI_DEC         &trans
 &kp PERIOD  &kp EQUAL     &kp COMMA  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &trans      &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans                &trans
-                                     &kp N0        &trans        &kp ENTER       &trans      &trans        &kp RALT
+                                     &kp N0        &kp SPACE     &kp ENTER       &trans      &trans        &kp RALT
             >;
         };
 
@@ -67,8 +67,8 @@
 
             bindings = <
 &trans     &kp EXCLAMATION  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp AMPERSAND      &kp QUESTION      &kp SLASH      &kp LPAR          &kp RPAR           &kp BSPC
-&kp LCTRL  &trans           &trans  &trans    &trans    &trans       &kp SINGLE_QUOTE   &kp LESS_THAN     &kp PIPE       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp GRAVE
-&kp LSHFT  &trans           &trans  &trans    &trans    &trans       &kp DOUBLE_QUOTES  &kp GREATER_THAN  &kp BACKSLASH  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp TILDE
+&kp LCTRL  &none            &none   &none     &none     &none        &kp SINGLE_QUOTE   &kp LESS_THAN     &kp PIPE       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp GRAVE
+&kp LSHFT  &none            &none   &none     &none     &none        &kp DOUBLE_QUOTES  &kp GREATER_THAN  &kp BACKSLASH  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp TILDE
                                     &kp LGUI  &trans    &trans       &kp SPACE          &trans            &kp RALT
             >;
         };
