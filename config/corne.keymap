@@ -86,10 +86,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans     &kp EXCLAMATION  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp AMPERSAND      &kp QUESTION      &kp SLASH      &kp LPAR          &kp RPAR           &kp BSPC
-&kp LCTRL  &none            &none   &none     &none     &none        &kp SINGLE_QUOTE   &kp LESS_THAN     &kp PIPE       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp GRAVE
-&kp LSHFT  &none            &none   &none     &none     &none        &kp DOUBLE_QUOTES  &kp GREATER_THAN  &kp BACKSLASH  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp TILDE
-                                    &kp LGUI  &trans    &trans       &kp SPACE          &trans            &kp RALT
+&trans     &kp EXCLAMATION  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp AMPERSAND  &kp RS(PLUS)  &kp RS(N7)      &kp RS(N8)        &kp RS(N9)      &kp BSPC
+&kp LCTRL  &none            &none   &none     &none     &none        &kp SLASH      &kp GRAVE     &kp RA(N7)      &kp RA(NUMBER_8)  &kp RA(N9)      &kp RS(NUMBER_2)
+&kp LSHFT  &none            &none   &none     &none     &none        &kp QUESTION   &kp TILDE     &kp RA(RS(N7))  &kp RA(RS(N8))    &kp RA(RS(N9))  &kp PIPE
+                                    &kp LGUI  &trans    &trans       &kp SPACE      &trans        &kp RALT
             >;
         };
     };
