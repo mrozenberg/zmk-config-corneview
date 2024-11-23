@@ -86,10 +86,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans     &kp EXCLAMATION  &kp RA(NUMBER_2)  &kp HASH  &kp DLLR  &kp PRCNT    &kp RS(NUMBER_6)  &kp RS(AMPS)  &kp RS(N7)      &kp RS(N8)        &kp RS(N9)      &kp BSPC
-&kp LCTRL  &none            &none             &none     &none     &none        &kp SLASH         &kp GRAVE     &kp RA(N7)      &kp RA(NUMBER_8)  &kp RA(N9)      &kp RS(NUMBER_2)
-&kp LSHFT  &none            &none             &none     &none     &none        &kp QUESTION      &kp TILDE     &kp RA(RS(N7))  &kp RA(RS(N8))    &kp RA(RS(N9))  &kp RA(TILDE)
-                                              &kp LGUI  &trans    &trans       &kp SPACE         &trans        &kp RALT
+&trans     &kp EXCLAMATION   &kp RA(NUMBER_2)  &kp HASH       &kp DLLR     &kp PRCNT     &kp RS(NUMBER_6)  &kp RS(AMPS)  &kp RS(N7)      &kp RS(N8)        &kp RS(N9)      &kp BSPC
+&kp LCTRL  &kp RS(NUMBER_3)  &kp RS(EQUAL)     &kp RS(MINUS)  &kp RS(SQT)  &kp RS(N5)    &kp SLASH         &kp GRAVE     &kp RA(N7)      &kp RA(NUMBER_8)  &kp RA(N9)      &kp RS(NUMBER_2)
+&kp LSHFT  &none             &none             &none          &none        &none         &kp QUESTION      &kp TILDE     &kp RA(RS(N7))  &kp RA(RS(N8))    &kp RA(RS(N9))  &kp RA(TILDE)
+                                               &kp LGUI       &trans       &trans        &kp SPACE         &trans        &kp RALT
             >;
         };
     };
