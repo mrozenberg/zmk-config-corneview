@@ -52,6 +52,16 @@
             #binding-cells = <2>;
             tapping-term-ms = <150>;
         };
+
+        hold_and_release: hold_and_release {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_AND_RELEASE";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-trigger-on-release;
+        };
     };
 
     combos {
@@ -106,8 +116,8 @@
 
             bindings = <
 &trans     &kp EXCLAMATION  &kp RA(NUMBER_2)  &kp HASH  &kp DLLR  &kp PRCNT    &kp RS(NUMBER_6)  &kp RS(MINUS)  &kp RS(N7)      &kp RS(N8)        &kp RS(N9)      &kp BSPC
-&kp LCTRL  &none            &none             &none     &none     &none        &kp SLASH         &kp GRAVE      &kp RA(N7)      &kp RA(NUMBER_8)  &kp RA(N9)      &kp RS(NUMBER_2)
-&kp LSHFT  &none            &none             &none     &none     &none        &kp QUESTION      &kp TILDE      &kp RA(RS(N7))  &kp RA(RS(N8))    &kp RA(RS(N9))  &kp BACKSLASH
+&kp LCTRL  &none            &none             &none     &none     &none        &kp SLASH         &kp GRAVE      &kp RA(N7)      &kp RA(NUMBER_8)  &kp RA(N9)      &hold_and_release LESS_THAN RS(NUMBER_2)
+&kp LSHFT  &none            &none             &none     &none     &none        &kp QUESTION      &kp TILDE      &kp RA(RS(N7))  &kp RA(RS(N8))    &kp RA(RS(N9))  &hold_and_release LA(E) BACKSLASH
                                               &kp LGUI  &trans    &trans       &kp SPACE         &trans         &kp RALT
             >;
         };
