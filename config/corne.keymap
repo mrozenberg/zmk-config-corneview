@@ -43,6 +43,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        hold_btn: hold_btn {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_BTN";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+        };
     };
 
     combos {
@@ -66,10 +75,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E     &kp R                 &kp T             &kp Y            &kp U                 &kp I      &kp O    &kp P          &kp BSPC
-&kp TAB    &kp A  &kp S  &kp D     &kp F                 &kp G             &kp H            &kp J                 &kp K      &kp L    &kp SEMICOLON  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V                 &kp B             &kp N            &kp M                 &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_BRACKET
-                         &kp LGUI  &space_layer 2 SPACE  &kp LEFT_SHIFT    &kp RIGHT_SHIFT  &enter_layer 1 ENTER  &kp RALT
+&kp ESC    &kp Q              &kp W                     &kp E                 &kp R                 &kp T             &kp Y            &kp U                  &kp I                  &kp O                      &kp P                            &kp BSPC
+&kp TAB    &hold_btn LSHFT A  &hold_btn LEFT_CONTROL S  &hold_btn LEFT_ALT D  &hold_btn LEFT_GUI F  &kp G             &kp H            &hold_btn RIGHT_GUI J  &hold_btn RIGHT_ALT K  &hold_btn RIGHT_CONTROL L  &hold_btn RIGHT_SHIFT SEMICOLON  &kp SQT
+&kp LCTRL  &kp Z              &kp X                     &kp C                 &kp V                 &kp B             &kp N            &kp M                  &kp COMMA              &kp DOT                    &kp FSLH                         &kp LEFT_BRACKET
+                                                        &kp LGUI              &space_layer 2 SPACE  &kp LEFT_SHIFT    &kp RIGHT_SHIFT  &enter_layer 1 ENTER   &kp RALT
             >;
         };
 
