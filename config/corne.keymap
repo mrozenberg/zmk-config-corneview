@@ -50,7 +50,8 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
         };
 
         hold_and_release: hold_and_release {
