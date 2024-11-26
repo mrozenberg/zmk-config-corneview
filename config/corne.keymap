@@ -62,56 +62,80 @@
         };
 
         left_paranthesis {
-            bindings = <&kp LS(N7)>;
+            bindings = <&kp LS(N8)>;
             key-positions = <7 9>;
             layers = <0>;
         };
 
         right_paranthesis {
-            bindings = <&kp LS(N8)>;
+            bindings = <&kp LS(N9)>;
             key-positions = <9 8>;
             layers = <0>;
         };
 
         left_bracket {
-            bindings = <&kp LA(N7)>;
+            bindings = <&kp LA(N8)>;
             key-positions = <19 21>;
             layers = <0>;
         };
 
         left_curly_bracket {
-            bindings = <&kp LS(LA(N7))>;
+            bindings = <&kp LS(LA(N8))>;
             key-positions = <31 33>;
             layers = <0>;
         };
 
         right_bracket {
-            bindings = <&kp LA(N8)>;
+            bindings = <&kp LA(N9)>;
             key-positions = <21 20>;
             layers = <0>;
         };
 
         right_curly_bracket {
-            bindings = <&kp RA(RS(N8))>;
+            bindings = <&kp RA(RS(N9))>;
             key-positions = <33 32>;
             layers = <0>;
         };
 
         less_than {
             bindings = <&kp GRAVE>;
-            key-positions = <7 8>;
+            key-positions = <7 6>;
             layers = <0>;
         };
 
         more_than {
             bindings = <&kp TILDE>;
+            key-positions = <19 18>;
+            layers = <0>;
+        };
+
+        b_slash {
+            bindings = <&kp LS(LA(N7))>;
+            key-positions = <31 32>;
+            layers = <0>;
+        };
+
+        f_slash {
+            bindings = <&kp LS(N7)>;
+            key-positions = <7 8>;
+            layers = <0>;
+        };
+
+        pipe {
+            bindings = <&kp LA(N7)>;
             key-positions = <19 20>;
             layers = <0>;
         };
 
         minus {
+            bindings = <&kp SLASH>;
+            key-positions = <30 31>;
+            layers = <0>;
+        };
+
+        plus {
             bindings = <&kp MINUS>;
-            key-positions = <31 32>;
+            key-positions = <30 32>;
             layers = <0>;
         };
     };
