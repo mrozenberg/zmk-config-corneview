@@ -9,22 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    macros {
-        se_oe: se_oe {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(U) &kp O>;
-            label = "SE_OE";
-        };
-
-        se_ae: se_ae {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(U) &kp A>;
-            label = "SE_AE";
-        };
-    };
-
     behaviors {
         temp_layer: temp_layer {
             compatible = "zmk,behavior-hold-tap";
