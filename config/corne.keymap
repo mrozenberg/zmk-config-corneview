@@ -136,5 +136,14 @@
                                   &none     &none     &none    &kp SPACE  &kp ENTER  &none
             >;
         };
+
+        layer_4 {
+            bindings = <
+&kp ESCAPE  &kp RS(BACKSLASH)           &kp RS(N7)                    &kp NUMBER_1                 &kp NUMBER_2           &kp NUMBER_3    &kp MINUS              &kp NUMBER_1  &kp N2  &kp N3  &kp BSLH    &kp BSPC
+&none       &hold_btn LEFT_SHIFT MINUS  &hold_btn LEFT_CONTROL SLASH  &hold_btn LEFT_ALT NUMBER_4  &hold_btn LEFT_GUI N5  &kp NUMBER_6    &kp FSLH               &kp N4        &kp N5  &kp N6  &kp LS(N7)  &none
+&kp PERIOD  &kp RIGHT_PARENTHESIS       &kp COMMA                     &kp N7                       &kp N8                 &kp N9          &kp RIGHT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &none       &none
+                                                                      &kp N0                       &kp SPACE              &kp ENTER       &kp COMMA              &kp DOT       &kp N0
+            >;
+        };
     };
 };
