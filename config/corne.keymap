@@ -153,7 +153,7 @@
             bindings = <
 &kp ESC       &hold_btn LS(LG(F12)) Q  &kp W                     &kp E                 &kp R                 &kp T             &kp Y            &kp U                  &kp I                  &kp O                      &kp P                            &kp BSPC
 &kp TAB       &hold_btn LSHFT A        &hold_btn LEFT_CONTROL S  &hold_btn LEFT_ALT D  &hold_btn LEFT_GUI F  &kp G             &kp H            &hold_btn RIGHT_GUI J  &hold_btn RIGHT_ALT K  &hold_btn RIGHT_CONTROL L  &hold_btn RIGHT_SHIFT SEMICOLON  &kp SQT
-&kp LEFT_ALT  &kp Z                    &kp X                     &kp C                 &kp V                 &kp B             &kp N            &hold_btn K_MUTE M     &kp COMMA              &kp DOT                    &kp FSLH                         &kp LEFT_BRACKET
+&kp LEFT_ALT  &kp Z                    &kp X                     &kp C                 &kp V                 &kp B             &temp_layer 3 N  &hold_btn K_MUTE M     &kp COMMA              &kp DOT                    &kp FSLH                         &kp LEFT_BRACKET
                                                                  &kp LGUI              &temp_layer 1 SPACE   &kp LEFT_SHIFT    &kp RIGHT_SHIFT  &temp_layer 2 ENTER    &kp RALT
             >;
         };
@@ -181,10 +181,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans     &kp EXCLAMATION  &kp RA(NUMBER_2)  &kp HASH    &kp DLLR  &none            &none   &none   &none   &none  &none  &trans
-&trans     &kp PERCENT      &kp LS(NUMBER_6)  &kp LS(N7)  &kp EXCL  &none            &none   &none   &none   &none  &none  &hold_and_release LESS_THAN RS(NUMBER_2)
-&kp LSHFT  &kp LS(N8)       &kp LS(N9)        &kp LS(N0)  &kp AMPS  &kp LS(MINUS)    &none   &none   &none   &none  &none  &hold_and_release LA(E) BACKSLASH
-                                              &trans      &trans    &trans           &trans  &trans  &trans
+&trans  &kp EXCLAMATION  &kp RA(NUMBER_2)  &kp HASH    &kp DLLR  &none            &none   &none   &none   &none  &none  &trans
+&trans  &kp PERCENT      &kp LS(NUMBER_6)  &kp LS(N7)  &kp EXCL  &none            &none   &none   &none   &none  &none  &hold_and_release LESS_THAN RS(NUMBER_2)
+&trans  &kp LS(N8)       &kp LS(N9)        &kp LS(N0)  &kp AMPS  &kp LS(MINUS)    &none   &none   &none   &none  &none  &hold_and_release LA(E) BACKSLASH
+                                           &trans      &trans    &trans           &trans  &trans  &trans
             >;
         };
 
