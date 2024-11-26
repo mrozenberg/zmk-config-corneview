@@ -82,10 +82,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &hold_btn LS(LG(F12)) Q  &kp W                     &kp E                 &kp R                 &kp T             &kp Y            &kp U                  &kp I                  &kp O                      &kp P                            &kp BSPC
-&kp TAB    &hold_btn LSHFT A        &hold_btn LEFT_CONTROL S  &hold_btn LEFT_ALT D  &hold_btn LEFT_GUI F  &kp G             &kp H            &hold_btn RIGHT_GUI J  &hold_btn RIGHT_ALT K  &hold_btn RIGHT_CONTROL L  &hold_btn RIGHT_SHIFT SEMICOLON  &kp SQT
-&kp LCTRL  &kp Z                    &kp X                     &kp C                 &kp V                 &kp B             &kp N            &hold_btn K_MUTE M     &kp COMMA              &kp DOT                    &kp FSLH                         &kp LEFT_BRACKET
-                                                              &kp LGUI              &temp_layer 1 SPACE   &kp LEFT_SHIFT    &kp RIGHT_SHIFT  &temp_layer 1 ENTER    &kp RALT
+&kp ESC       &hold_btn LS(LG(F12)) Q  &kp W                     &kp E                 &kp R                 &kp T             &kp Y            &kp U                  &kp I                  &kp O                      &kp P                            &kp BSPC
+&kp TAB       &hold_btn LSHFT A        &hold_btn LEFT_CONTROL S  &hold_btn LEFT_ALT D  &hold_btn LEFT_GUI F  &kp G             &kp H            &hold_btn RIGHT_GUI J  &hold_btn RIGHT_ALT K  &hold_btn RIGHT_CONTROL L  &hold_btn RIGHT_SHIFT SEMICOLON  &kp SQT
+&kp LEFT_ALT  &kp Z                    &kp X                     &kp C                 &kp V                 &kp B             &kp N            &hold_btn K_MUTE M     &kp COMMA              &kp DOT                    &kp FSLH                         &kp LEFT_BRACKET
+                                                                 &kp LGUI              &temp_layer 1 SPACE   &kp LEFT_SHIFT    &kp RIGHT_SHIFT  &temp_layer 3 ENTER    &kp RALT
             >;
         };
 
@@ -97,10 +97,10 @@
             //                    |  0  |     | ENT |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp RS(BACKSLASH)           &kp RS(N7)                    &kp NUMBER_1                 &kp NUMBER_2           &kp NUMBER_3    &kp C_VOLUME_UP  &kp HOME    &kp UP_ARROW      &kp END     &kp C_BRIGHTNESS_INC  &kp BSPC
-&none       &hold_btn LEFT_SHIFT MINUS  &hold_btn LEFT_CONTROL SLASH  &hold_btn LEFT_ALT NUMBER_4  &hold_btn LEFT_GUI N5  &kp NUMBER_6    &kp C_VOL_DN     &kp LEFT    &kp DOWN_ARROW    &kp RIGHT   &kp C_BRI_DEC         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
-&kp PERIOD  &kp RIGHT_PARENTHESIS       &kp COMMA                     &kp N7                       &kp N8                 &kp N9          &kp K_MUTE       &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &none                 &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
-                                                                      &kp N0                       &kp SPACE              &trans          &trans           &trans      &trans
+&trans  &none           &none             &none         &none         &none     &kp C_VOLUME_UP  &kp HOME    &kp UP_ARROW      &kp END     &kp C_BRIGHTNESS_INC  &trans
+&trans  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &none     &kp C_VOL_DN     &kp LEFT    &kp DOWN_ARROW    &kp RIGHT   &kp C_BRI_DEC         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
+&trans  &none           &none             &none         &none         &none     &kp K_MUTE       &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &none                 &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
+                                          &trans        &trans        &trans    &trans           &trans      &trans
             >;
         };
 
@@ -112,28 +112,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans     &kp EXCLAMATION  &kp RA(NUMBER_2)  &kp HASH      &kp DLLR      &kp PRCNT    &kp RS(NUMBER_6)  &kp RS(MINUS)  &kp RS(N7)      &kp RS(N8)        &kp RS(N9)      &kp BSPC
-&kp LCTRL  &kp LEFT_SHIFT   &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &none        &kp SLASH         &kp GRAVE      &kp RA(N7)      &kp RA(NUMBER_8)  &kp RA(N9)      &hold_and_release LESS_THAN RS(NUMBER_2)
-&kp LSHFT  &none            &none             &none         &none         &none        &kp QUESTION      &kp TILDE      &kp RA(RS(N7))  &kp RA(RS(N8))    &kp RA(RS(N9))  &hold_and_release LA(E) BACKSLASH
-                                              &kp LGUI      &trans        &trans       &kp SPACE         &trans         &kp RALT
-            >;
-        };
-
-        nav_layer {
-            bindings = <
-&none  &none           &none      &none     &none     &none    &none      &kp HOME   &kp UP    &kp END    &kp PAGE_UP    &none
-&none  &kp LEFT_SHIFT  &kp LCTRL  &kp LALT  &kp LGUI  &none    &none      &kp LEFT   &kp DOWN  &kp RIGHT  &kp PAGE_DOWN  &none
-&none  &none           &none      &none     &none     &none    &none      &none      &none     &none      &none          &none
-                                  &none     &none     &none    &kp SPACE  &kp ENTER  &none
+&trans     &kp EXCLAMATION  &kp RA(NUMBER_2)  &kp HASH    &kp DLLR  &none            &none   &none   &none   &none  &none  &trans
+&trans     &kp PERCENT      &kp LS(NUMBER_6)  &kp LS(N7)  &kp EXCL  &none            &none   &none   &none   &none  &none  &hold_and_release LESS_THAN RS(NUMBER_2)
+&kp LSHFT  &kp LS(N8)       &kp LS(N9)        &kp LS(N0)  &kp AMPS  &kp LS(MINUS)    &none   &none   &none   &none  &none  &hold_and_release LA(E) BACKSLASH
+                                              &trans      &trans    &trans           &trans  &trans  &trans
             >;
         };
 
         Numbers {
             bindings = <
-&kp ESCAPE  &kp RS(BACKSLASH)           &kp RS(N7)                    &kp NUMBER_1                 &kp NUMBER_2           &kp NUMBER_3    &kp MINUS              &kp NUMBER_1  &kp N2  &kp N3  &kp BSLH    &kp BSPC
-&none       &hold_btn LEFT_SHIFT MINUS  &hold_btn LEFT_CONTROL SLASH  &hold_btn LEFT_ALT NUMBER_4  &hold_btn LEFT_GUI N5  &kp NUMBER_6    &kp FSLH               &kp N4        &kp N5  &kp N6  &kp LS(N7)  &none
-&kp PERIOD  &kp RIGHT_PARENTHESIS       &kp COMMA                     &kp N7                       &kp N8                 &kp N9          &kp RIGHT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &none       &none
-                                                                      &kp N0                       &kp SPACE              &kp ENTER       &kp COMMA              &kp DOT       &kp N0
+&kp ESCAPE  &kp BACKSLASH  &kp N1  &kp N2  &kp N3     &kp MINUS                &kp MINUS              &kp NUMBER_1  &kp N2  &kp N3  &kp BSLH    &kp BSPC
+&kp TAB     &kp LS(N7)     &kp N4  &kp N5  &kp N6     &kp FSLH                 &kp FSLH               &kp N4        &kp N5  &kp N6  &kp LS(N7)  &none
+&kp COMMA   &kp DOT        &kp N7  &kp N8  &kp N9     &kp RIGHT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &kp DOT     &kp COMMA
+                                   &kp N0  &kp SPACE  &trans                   &trans                 &kp ENTER     &kp N0
             >;
         };
     };
