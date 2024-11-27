@@ -182,10 +182,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCLAMATION  &kp RA(NUMBER_2)  &kp HASH               &kp DLLR          &none            &none   &none   &none   &none  &none  &trans
-&trans  &kp PERCENT      &kp LS(NUMBER_6)  &kp LS(N7)             &kp EXCL          &none            &none   &none   &none   &none  &none  &hold_and_release LESS_THAN RS(NUMBER_2)
-&trans  &kp LS(N8)       &kp LS(N9)        &kp RIGHT_PARENTHESIS  &kp LS(NUMBER_6)  &kp LS(MINUS)    &none   &none   &none   &none  &none  &hold_and_release LA(E) BACKSLASH
-                                           &trans                 &trans            &trans           &trans  &trans  &trans
+&trans  &hold_btn LA(RIGHT_BRACKET) RIGHT_BRACKET  &kp RA(NUMBER_2)  &kp HASH               &kp DLLR       &kp EXCL            &none   &none   &none   &none  &none  &trans
+&trans  &kp PERCENT                                &kp LS(NUMBER_6)  &kp LS(N7)             &kp LA(E)      &kp LS(NUMBER_6)    &none   &none   &none   &none  &none  &hold_and_release LESS_THAN RS(NUMBER_2)
+&trans  &kp LS(N8)                                 &kp LS(N9)        &kp RIGHT_PARENTHESIS  &kp LESS_THAN  &kp LS(MINUS)       &none   &none   &none   &none  &none  &hold_and_release LA(E) BACKSLASH
+                                                                     &trans                 &trans         &trans              &trans  &trans  &trans
             >;
         };
 
