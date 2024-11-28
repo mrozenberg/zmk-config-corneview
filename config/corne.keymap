@@ -64,37 +64,37 @@
 
         left_paranthesis {
             bindings = <&kp LS(N8)>;
-            key-positions = <7 9>;
+            key-positions = <9 8>;
             layers = <0>;
         };
 
         right_paranthesis {
             bindings = <&kp LS(N9)>;
-            key-positions = <9 8>;
+            key-positions = <9 10>;
             layers = <0>;
         };
 
         left_bracket {
             bindings = <&kp LA(N8)>;
-            key-positions = <19 21>;
+            key-positions = <21 20>;
             layers = <0>;
         };
 
         left_curly_bracket {
             bindings = <&kp LS(LA(N8))>;
-            key-positions = <31 33>;
+            key-positions = <33 32>;
             layers = <0>;
         };
 
         right_bracket {
             bindings = <&kp LA(N9)>;
-            key-positions = <21 20>;
+            key-positions = <21 22>;
             layers = <0>;
         };
 
         right_curly_bracket {
             bindings = <&kp RA(RS(N9))>;
-            key-positions = <33 32>;
+            key-positions = <33 34>;
             layers = <0>;
         };
 
