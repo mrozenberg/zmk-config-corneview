@@ -139,6 +139,11 @@
             key-positions = <30 32>;
             layers = <0>;
         };
+
+        fwd_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <38 11>;
+        };
     };
 
     keymap {
