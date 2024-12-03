@@ -59,7 +59,7 @@
             layers = <1>;
         };
 
-        boot_load {
+        boot_load_left {
             bindings = <&bootloader>;
             key-positions = <12 24>;
             layers = <1>;
@@ -160,6 +160,12 @@
             key-positions = <30 32>;
             layers = <0>;
             timeout-ms = <40>;
+        };
+
+        boot_load_right {
+            bindings = <&bootloader>;
+            key-positions = <23 35>;
+            layers = <1>;
         };
     };
 
