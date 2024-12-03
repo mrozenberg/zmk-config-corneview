@@ -39,6 +39,15 @@
             tapping-term-ms = <200>;
             hold-trigger-on-release;
         };
+
+        ao_and_cmd_plus: ao_and_cmd_plus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AO_AND_CMD_PLUS";
+            bindings = <&kp LEFT_BRACKET>, <&kp LG(MINUS)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
     };
 
     combos {
@@ -66,78 +75,91 @@
             bindings = <&kp LS(N8)>;
             key-positions = <9 8>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         right_paranthesis {
             bindings = <&kp LS(N9)>;
             key-positions = <9 10>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         left_bracket {
             bindings = <&kp LA(N8)>;
             key-positions = <21 20>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         left_curly_bracket {
             bindings = <&kp LS(LA(N8))>;
             key-positions = <33 32>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         right_bracket {
             bindings = <&kp LA(N9)>;
             key-positions = <21 22>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         right_curly_bracket {
             bindings = <&kp RA(RS(N9))>;
             key-positions = <33 34>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         less_than {
             bindings = <&kp GRAVE>;
             key-positions = <7 6>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         more_than {
             bindings = <&kp TILDE>;
             key-positions = <19 18>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         b_slash {
             bindings = <&kp LS(LA(N7))>;
             key-positions = <31 32>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         f_slash {
             bindings = <&kp LS(N7)>;
             key-positions = <7 8>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         pipe {
             bindings = <&kp LA(N7)>;
             key-positions = <19 20>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         minus {
             bindings = <&kp SLASH>;
             key-positions = <30 31>;
             layers = <0>;
+            timeout-ms = <40>;
         };
 
         plus {
             bindings = <&kp MINUS>;
             key-positions = <30 32>;
             layers = <0>;
+            timeout-ms = <40>;
         };
     };
 
@@ -154,7 +176,7 @@
             bindings = <
 &kp TAB     &hold_btn LS(LG(F12)) Q  &kp W                     &kp E                 &kp R                 &kp T             &kp Y                &kp U                  &kp I                  &kp O                      &kp P                            &kp BSPC
 &kp ESCAPE  &hold_btn LSHFT A        &hold_btn LEFT_CONTROL S  &hold_btn LEFT_ALT D  &hold_btn LEFT_GUI F  &kp G             &kp H                &hold_btn RIGHT_GUI J  &hold_btn RIGHT_ALT K  &hold_btn RIGHT_CONTROL L  &hold_btn RIGHT_SHIFT SEMICOLON  &kp SQT
-&kp LSHFT   &kp Z                    &kp X                     &kp C                 &kp V                 &kp B             &temp_layer 3 N      &hold_btn K_MUTE M     &kp COMMA              &kp DOT                    &kp FSLH                         &kp LEFT_BRACKET
+&kp LSHFT   &kp Z                    &kp X                     &kp C                 &kp V                 &kp B             &temp_layer 3 N      &hold_btn K_MUTE M     &kp COMMA              &kp PERIOD                 &kp FSLH                         &ao_and_cmd_plus
                                                                &kp LGUI              &temp_layer 1 SPACE   &kp LEFT_SHIFT    &temp_layer 2 SPACE  &temp_layer 1 ENTER    &kp RALT
             >;
         };
@@ -193,7 +215,7 @@
             bindings = <
 &to 0      &kp BACKSLASH  &kp N1  &kp N2  &kp N3     &kp MINUS                &kp MINUS              &kp NUMBER_1  &kp N2  &kp N3  &kp BSLH    &kp BSPC
 &kp TAB    &kp LS(N7)     &kp N4  &kp N5  &kp N6     &kp FSLH                 &kp FSLH               &kp N4        &kp N5  &kp N6  &kp LS(N7)  &none
-&kp COMMA  &kp DOT        &kp N7  &kp N8  &kp N9     &kp RIGHT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &kp DOT     &kp COMMA
+&kp COMMA  &kp DOT        &kp N7  &kp N8  &kp N9     &kp RIGHT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &kp PERIOD  &kp COMMA
                                   &kp N0  &kp SPACE  &trans                   &trans                 &kp ENTER     &kp N0
             >;
         };
