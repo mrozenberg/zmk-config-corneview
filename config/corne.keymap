@@ -60,22 +60,10 @@
     combos {
         compatible = "zmk,combos";
 
-        bt_clear_current {
-            bindings = <&bt BT_CLR>;
-            key-positions = <12 0>;
-            layers = <4>;
-        };
-
-        boot_load_left {
-            bindings = <&bootloader>;
-            key-positions = <12 24>;
-            layers = <4>;
-        };
-
-        number_layer {
-            bindings = <&tog 4>;
+        bt_layer {
+            bindings = <&tog 5>;
             key-positions = <38 39>;
-            layers = <4 0>;
+            layers = <0 5>;
         };
 
         left_paranthesis {
@@ -168,12 +156,6 @@
             layers = <0>;
             timeout-ms = <40>;
         };
-
-        boot_load_right {
-            bindings = <&bootloader>;
-            key-positions = <23 35>;
-            layers = <4>;
-        };
     };
 
     keymap {
@@ -194,7 +176,7 @@
             >;
         };
 
-        Navigation {
+        nav_1 {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  7  |  8  |  9  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
             // | BTCLR| BT1 | BT2 |  4  |  5  |  6  |   | LFT | DWN |  UP | RGT |     |      |
@@ -209,7 +191,7 @@
             >;
         };
 
-        navigation_2 {
+        nav_2 {
             bindings = <
 &bt BT_NXT   &none      &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &none        &kp C_VOLUME_UP  &kp LG(LEFT_ARROW)  &kp UP_ARROW      &kp RG(RIGHT)  &kp C_BRIGHTNESS_INC  &kp DEL
 &kp LG(TAB)  &mkp LCLK  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK    &kp C_VOL_DN     &kp LEFT            &kp DOWN_ARROW    &kp RIGHT      &kp C_BRI_DEC         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
@@ -239,6 +221,15 @@
 &kp TAB    &kp LS(N7)     &kp N4        &kp N5        &kp N6        &kp FSLH                 &kp FSLH               &hold_btn RIGHT_COMMAND NUMBER_4  &hold_btn RIGHT_ALT N5  &hold_btn RIGHT_CONTROL NUMBER_6  &hold_btn RIGHT_SHIFT LS(N7)  &none
 &kp COMMA  &kp DOT        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RIGHT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp N7                            &kp N8                  &kp N9                            &kp PERIOD                    &kp COMMA
                                         &kp N0        &kp SPACE     &trans                   &trans                 &kp ENTER                         &kp N0
+            >;
+        };
+
+        bt_layer {
+            bindings = <
+&to 0  &none  &none  &none  &none  &bootloader    &bootloader  &none  &none  &none  &none  &bt BT_CLR
+&none  &none  &none  &none  &none  &none          &none        &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none          &none        &none  &none  &none  &none  &none
+                     &none  &none  &none          &none        &none  &none
             >;
         };
     };
