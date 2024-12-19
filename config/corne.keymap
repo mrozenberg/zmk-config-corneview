@@ -187,10 +187,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &hold_btn LS(LG(F12)) Q  &kp W                     &kp E                 &kp R                 &kp T             &kp Y                &kp U                  &kp I                  &kp O                      &kp P                            &kp BSPC
-&kp TAB    &hold_btn LSHFT A        &hold_btn LEFT_CONTROL S  &hold_btn LEFT_ALT D  &hold_btn LEFT_GUI F  &kp G             &kp H                &hold_btn RIGHT_GUI J  &hold_btn RIGHT_ALT K  &hold_btn RIGHT_CONTROL L  &hold_btn RIGHT_SHIFT SEMICOLON  &kp SQT
-&kp LSHFT  &kp Z                    &kp X                     &kp C                 &kp V                 &kp B             &temp_layer 4 N      &hold_btn K_MUTE M     &kp COMMA              &kp PERIOD                 &kp FSLH                         &ao_and_cmd_plus
-                                                              &kp LGUI              &temp_layer 2 SPACE   &kp LEFT_SHIFT    &temp_layer 3 SPACE  &temp_layer 1 ENTER    &kp RALT
+&kp ESC    &hold_btn LS(LG(F12)) Q  &kp W                     &kp E                 &kp R                 &kp T     &kp Y                &kp U                  &kp I                  &kp O                      &kp P                            &kp BSPC
+&kp TAB    &hold_btn LSHFT A        &hold_btn LEFT_CONTROL S  &hold_btn LEFT_ALT D  &hold_btn LEFT_GUI F  &kp G     &kp H                &hold_btn RIGHT_GUI J  &hold_btn RIGHT_ALT K  &hold_btn RIGHT_CONTROL L  &hold_btn RIGHT_SHIFT SEMICOLON  &kp SQT
+&kp LSHFT  &kp Z                    &kp X                     &kp C                 &kp V                 &kp B     &temp_layer 4 N      &hold_btn K_MUTE M     &kp COMMA              &kp PERIOD                 &kp FSLH                         &ao_and_cmd_plus
+                                                              &kp LGUI              &temp_layer 2 SPACE   &tog 4    &temp_layer 3 SPACE  &temp_layer 1 ENTER    &kp RALT
             >;
         };
 
@@ -226,19 +226,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &hold_btn LA(RIGHT_BRACKET) RIGHT_BRACKET  &kp RA(NUMBER_2)  &kp HASH               &kp DLLR       &kp EXCL            &none   &none   &none   &none  &none  &trans
-&trans  &kp PERCENT                                &kp LS(NUMBER_6)  &kp LS(N7)             &kp LA(E)      &kp LS(NUMBER_6)    &none   &none   &none   &none  &none  &hold_and_release LESS_THAN RS(NUMBER_2)
-&trans  &kp LS(N8)                                 &kp LS(N9)        &kp RIGHT_PARENTHESIS  &kp LESS_THAN  &kp LS(MINUS)       &none   &none   &none   &none  &none  &hold_and_release LA(E) BACKSLASH
-                                                                     &trans                 &trans         &trans              &trans  &trans  &trans
+&trans  &hold_btn LA(RIGHT_BRACKET) RIGHT_BRACKET  &kp RA(NUMBER_2)  &kp HASH               &kp DLLR       &kp EXCL            &none   &none              &none          &none              &none            &trans
+&trans  &kp PERCENT                                &kp LS(NUMBER_6)  &kp LS(N7)             &kp LA(E)      &kp LS(NUMBER_6)    &none   &kp RIGHT_COMMAND  &kp RIGHT_ALT  &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &hold_and_release LESS_THAN RS(NUMBER_2)
+&trans  &kp LS(N8)                                 &kp LS(N9)        &kp RIGHT_PARENTHESIS  &kp LESS_THAN  &kp LS(MINUS)       &none   &none              &none          &none              &none            &hold_and_release LA(E) BACKSLASH
+                                                                     &trans                 &trans         &trans              &trans  &trans             &trans
             >;
         };
 
         Numbers {
             bindings = <
-&to 0      &kp BACKSLASH  &kp N1  &kp N2  &kp N3     &kp MINUS                &kp MINUS              &kp NUMBER_1  &kp N2  &kp N3  &kp BSLH    &kp BSPC
-&kp TAB    &kp LS(N7)     &kp N4  &kp N5  &kp N6     &kp FSLH                 &kp FSLH               &kp N4        &kp N5  &kp N6  &kp LS(N7)  &none
-&kp COMMA  &kp DOT        &kp N7  &kp N8  &kp N9     &kp RIGHT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &kp PERIOD  &kp COMMA
-                                  &kp N0  &kp SPACE  &trans                   &trans                 &kp ENTER     &kp N0
+&to 0      &kp BACKSLASH  &kp N7        &kp N8        &kp N9        &kp MINUS                &kp MINUS              &kp NUMBER_1                      &kp N2                  &kp N3                            &kp BSLH                      &kp BSPC
+&kp TAB    &kp LS(N7)     &kp N4        &kp N5        &kp N6        &kp FSLH                 &kp FSLH               &hold_btn RIGHT_COMMAND NUMBER_4  &hold_btn RIGHT_ALT N5  &hold_btn RIGHT_CONTROL NUMBER_6  &hold_btn RIGHT_SHIFT LS(N7)  &none
+&kp COMMA  &kp DOT        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RIGHT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp N7                            &kp N8                  &kp N9                            &kp PERIOD                    &kp COMMA
+                                        &kp N0        &kp SPACE     &trans                   &trans                 &kp ENTER                         &kp N0
             >;
         };
     };
