@@ -156,6 +156,18 @@
             layers = <0>;
             timeout-ms = <40>;
         };
+
+        sticky_layer_2 {
+            bindings = <&tog 2>;
+            key-positions = <0 37>;
+            layers = <0 2>;
+        };
+
+        sticky_layer_1 {
+            bindings = <&tog 1>;
+            key-positions = <0 40>;
+            layers = <0 1>;
+        };
     };
 
     keymap {
