@@ -159,13 +159,13 @@
 
         sticky_layer_2 {
             bindings = <&tog 2>;
-            key-positions = <37 38>;
+            key-positions = <37 38 36>;
             layers = <0 2>;
         };
 
         sticky_layer_1 {
             bindings = <&tog 1>;
-            key-positions = <40 39>;
+            key-positions = <40 39 41>;
             layers = <0 1>;
         };
     };
