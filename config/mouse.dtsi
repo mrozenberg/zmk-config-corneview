@@ -10,10 +10,10 @@
 &mmv_input_listener {
   warp {
     layers = <1>;
-    input-processors = <&zip_xy_scaler 3 1>;
+    input-processors = <&zip_xy_scaler 2 1>;
   };
   precision {
-    layers = <3>;
+    layers = <2>;
     input-processors = <&zip_xy_scaler 1 2>;
   };
 };
