@@ -14,15 +14,7 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <input/processors.dtsi>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 
-/ {
-    input-processors {
-        accel_scaler: zip_xy_scaler {
-            multiplier = <2>;
-        };
-    };
-};
 
 / {
     behaviors {
@@ -63,16 +55,6 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-
-        accel_cmd: mod_morph {
-            compatible = "zmk,behavior-mod-morph";
-            label = "accel_cmd";
-            // When tapped, it sends a normal J keystroke
-            tap-binding = <&kp LEFT_GUI>;
-            // When held, it acts as a modifier that applies the accel_scaler input processor
-            // (the syntax below attaches the input processor to the mod-morph’s hold behavior)
-            hold-input-processors = <&accel_scaler>;
         };
     };
 
@@ -224,8 +206,8 @@
 
         nav_2 {
             bindings = <
-&to 0        &none      &accel_cmd &msc SCRL_DOWN  &accel_cmd &mmv MOVE_UP    &accel_cmd &msc SCRL_UP     &none        &kp C_VOLUME_UP  &kp LG(LEFT_ARROW)  &msc SCRL_UP      &kp RG(RIGHT)  &kp C_BRIGHTNESS_INC  &kp DEL
-&kp RG(TAB)  &mkp LCLK  &accel_cmd &mmv MOVE_LEFT  &accel_cmd &mmv MOVE_DOWN  &accel_cmd &mmv MOVE_RIGHT  &mkp RCLK    &kp C_VOL_DN     &kp LEFT            &msc SCRL_DOWN    &kp RIGHT      &kp C_BRI_DEC         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
+&to 0        &none      &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &none        &kp C_VOLUME_UP  &kp LG(LEFT_ARROW)  &msc SCRL_UP      &kp RG(RIGHT)  &kp C_BRIGHTNESS_INC  &kp DEL
+&kp RG(TAB)  &mkp LCLK  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK    &kp C_VOL_DN     &kp LEFT            &msc SCRL_DOWN    &kp RIGHT      &kp C_BRI_DEC         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
 &trans       &mkp MB4   &none           &none           &none            &mkp MB5     &kp K_MUTE       &kp C_PREV          &kp C_PLAY_PAUSE  &kp C_NEXT     &none                 &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
                                         &trans          &trans           &trans       &trans           &trans              &trans
             >;
