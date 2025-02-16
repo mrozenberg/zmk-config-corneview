@@ -1,0 +1,28 @@
+// Settings tuned for Macbook Air 15" + 4k external display
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
+#include <dt-bindings/zmk/pointing.h>
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+// Based on @urob's config https://github.com/urob/zmk-config/blob/main/config/mouse.dtsi
+&mmv_input_listener {
+  warp {
+    layers = <1>;
+    input-processors = <&zip_xy_scaler 3 1>;
+  };
+  precision {
+    layers = <3>;
+    input-processors = <&zip_xy_scaler 1 2>;
+  };
+};
+
+#define MM_U &mmv MOVE_UP
+#define MM_D &mmv MOVE_DOWN
+#define MM_L &mmv MOVE_LEFT
+#define MM_R &mmv MOVE_RIGHT
+#define SM_U &msc SCRL_UP
+#define SM_D &msc SCRL_DOWN
+#define SM_L &msc SCRL_LEFT
+#define SM_R &msc SCRL_RIGHT
