@@ -245,9 +245,9 @@
             // Cursor cluster on left home row; SCR = scroll; MB4/MB5 = back/forward
 
             bindings = <
-&to 0        &none      SM_D    MM_U    SM_U     &none        &none   &none          &none          &none             &none           &kp DEL
-&kp RG(TAB)  &mkp LCLK  MM_L    MM_D    MM_R     &mkp RCLK    &none   &kp LEFT_GUI   &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none
-&trans       &mkp MB4   &none   &none   &none    &mkp MB5     &none   &none          &none          &none             &none           &none
+&to 0        &none      &none   &none   &none    &none        &none   &none          &none          &none             &none           &kp DEL
+&kp RG(TAB)  &none      &none   &none   &none    &none        &none   &kp LEFT_GUI   &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none
+&trans       &none      &none   &none   &none    &none        &none   &none          &none          &none             &none           &none
                                 &trans   &trans  &trans       &trans  &trans         &trans
             >;
         };
