@@ -5,10 +5,11 @@
  */
 
 // Settings tuned for Macbook Air 15" + 4k external display
-// Must be defined before behaviors.dtsi pulls in pointing.h
+// Must be defined before pointing.h is first included
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2000  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
+#include <dt-bindings/zmk/pointing.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -245,8 +246,8 @@
             // Cursor cluster on left home row; SCR = scroll; MB4/MB5 = back/forward
 
             bindings = <
-&to 0        &none      &none   &none   &none    &none        &none   &none          &none          &none             &none           &kp DEL
-&kp RG(TAB)  &mkp LCLK  &none   &none   &none    &mkp RCLK    &none   &kp LEFT_GUI   &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none
+&to 0        &none      SM_D    MM_U    SM_U     &none        &none   &none          &none          &none             &none           &kp DEL
+&kp RG(TAB)  &mkp LCLK  MM_L    MM_D    MM_R     &mkp RCLK    &none   &kp LEFT_GUI   &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none
 &trans       &mkp MB4   &none   &none   &none    &mkp MB5     &none   &none          &none          &none             &none           &none
                                 &trans   &trans  &trans       &trans  &trans         &trans
             >;
