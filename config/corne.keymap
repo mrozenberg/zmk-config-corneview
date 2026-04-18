@@ -4,10 +4,15 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "mouse.dtsi"
+// Settings tuned for Macbook Air 15" + 4k external display
+// Must be defined before behaviors.dtsi pulls in pointing.h
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include "mouse.dtsi"
 
 / {
     behaviors {

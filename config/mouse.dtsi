@@ -1,8 +1,6 @@
-// Settings tuned for Macbook Air 15" + 4k external display
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+// ZMK_POINTING_DEFAULT_MOVE_VAL / SCRL_VAL are defined at the top of corne.keymap
+// (they must precede the transitive include of pointing.h via behaviors.dtsi).
 
-#include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
