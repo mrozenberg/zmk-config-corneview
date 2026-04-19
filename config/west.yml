@@ -2,15 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: nickw560 # Added for nice!view optimizations
-      url-base: https://github.com/nickw560
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-nice-view-widget # This is the crucial part for ZMK 4.1
-      remote: nickw560
-      revision: main
   self:
     path: config
