@@ -5,3 +5,6 @@ Since I'm Swedish and use Swedish, Danish and English on a daily basis my config
 
 Because keyboard mapping was created by mad men in some kind of asylum, I've also had to fix some other special characters that would otherwise not work when the mac/PC think you are using a Swedish keyboard.
 Check the keymap for more details.
+
+OBS! At the time of writing (Apr 2026), neither https://nickcoutsos.github.io/keymap-editor/ nor the ZMK Keyedtior will work with this config as I have Swedish characters set up + combos.
+
