@@ -4,12 +4,15 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/mouse.h>
+// Settings tuned for Macbook Air 15" + 4k external display
+// Must be defined before pointing.h is first included
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
+#include <dt-bindings/zmk/pointing.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/pointing.h>
 #include "mouse.dtsi"
 
 / {
@@ -60,7 +63,7 @@
         bt_layer {
             bindings = <&tog 5>;
             key-positions = <38 39>;
-            layers = <0 6>;
+            layers = <0 5>;
         };
 
         left_paranthesis {
@@ -172,25 +175,28 @@
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | GLOB |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |  [   |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            // | ESC |  Q* |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BSPC |
+            // | TAB |  A* |  S* |  D* |  F* |  G  |   |  H  |  J* |  K* |  L* |  ;* |  '   |
+            // | GLB |  Z  |  X  |  C  |  V  |  B  |   |  N* |  M* |  ,  |  .  |  /  |  [/+ |
+            //                    | \/GUI | SPC/L4 | ENT/L3 |   | SPC/L2 | ENT/L1 | \/RGUI |
+            // * = hold-tap: row 1 Q holds LS(LG(F12)); home-row mods on A S D F / J K L ;
+            //   N holds mo 3; M holds K_MUTE; col 13 [ morphs to LG(MINUS) with GUI held
 
             bindings = <
 &kp ESC    &hold_btn LS(LG(F12)) Q  &kp W                     &kp E                     &kp R                 &kp T                  &kp Y                &kp U                  &kp I                          &kp O                      &kp P                            &kp BSPC
 &kp TAB    &hold_btn LSHFT A        &hold_btn LEFT_CONTROL S  &hold_btn LEFT_ALT D      &hold_btn LEFT_GUI F  &kp G                  &kp H                &hold_btn RIGHT_GUI J  &hold_btn RIGHT_ALT K          &hold_btn RIGHT_CONTROL L  &hold_btn RIGHT_SHIFT SEMICOLON  &kp SQT
-&kp KC_GLOBE  &kp Z                    &kp X                     &kp C                     &kp V                 &kp B                  &temp_layer 3 N      &hold_btn K_MUTE M     &kp COMMA                      &kp PERIOD                 &kp FSLH                         &ao_and_cmd_plus
+&kp GLOBE  &kp Z                    &kp X                     &kp C                     &kp V                 &kp B                  &temp_layer 3 N      &hold_btn K_MUTE M     &kp COMMA                      &kp PERIOD                 &kp FSLH                         &ao_and_cmd_plus
                                                               &hold_btn LGUI BACKSLASH  &temp_layer 4 SPACE   &temp_layer 3 ENTER    &temp_layer 2 SPACE  &temp_layer 1 ENTER    &hold_btn RIGHT_GUI BACKSLASH
             >;
         };
 
         nav {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  7  |  8  |  9  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | BTCLR| BT1 | BT2 |  4  |  5  |  6  |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |  1  |  2  |  3  |   |     |     |     |     |     |      |
-            //                    |  0  |     | ENT |   | ENT |     | ALT |
+            // | to0 |     |     |     |     |     |   | V+  | ⌘←  |  ↑  | ⌘→  | BRI+| DEL  |
+            // | trs | SHFT| CTRL| ALT | GUI |     |   | V-  |  ←  |  ↓  |  →  | BRI-| MssCtl|
+            // | trs |     |     |     |     |     |   | MUTE| PREV| P/P | NEXT|⌘MssC|⌃MssC |
+            //                    | trs | trs | trs |   | trs | trs | trs |
+            // Right side = media + window nav; left home row mirrors default mods
 
             bindings = <
 &to 0   &none           &none             &none         &none         &none     &kp C_VOLUME_UP  &kp LG(LEFT_ARROW)  &kp UP_ARROW      &kp RG(RIGHT)  &kp C_BRIGHTNESS_INC                   &kp DEL
@@ -200,12 +206,13 @@
             >;
         };
 
-        Symbols {
+        symbols {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // |  !  |  @  |  #  |  $  |  %  |  ^  |   |  &  |  *  |  (  |  )  |  -  |  <  |
+            // |     | SHFT| CTRL| ALT | GUI |     |   |     | RGUI| RALT| RCTL| RSFT|  ]  |
+            // |     |  `  |     |     |     |     |   |     |     |     |     |     |  \  |
+            //                    | trs | trs | trs |   | trs | trs | trs |
+            // Tap = shifted sym; hold on row 1 = LA(n)/RA(3)/RA(]); hold on col 13 = LESS_THAN / BSLH
 
             bindings = <
 &hold_btn LA(NUMBER_1) LS(NUMBER_1)  &hold_btn LA(NUMBER_2) LS(NUMBER_2)  &hold_btn RA(NUMBER_3) LS(NUMBER_3)  &hold_btn LA(NUMBER_4) LS(NUMBER_4)  &hold_btn LA(N5) LS(N5)  &hold_btn LA(NUMBER_6) LS(NUMBER_6)    &hold_btn LA(N7) LS(N7)  &hold_btn LA(N8) RS(N8)  &hold_btn LA(N9) LS(N9)  &hold_btn LA(N0) LS(N0)  &hold_btn LS(MINUS) MINUS  &hold_btn LS(LESS_THAN) LESS_THAN
@@ -215,7 +222,13 @@
             >;
         };
 
-        Numbers {
+        numbers {
+            // -----------------------------------------------------------------------------------------
+            // | trs |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
+            // | trs | SHFT| CTRL| ALT | GUI |     |   |     | GUI | ALT | CTRL| SHFT|      |
+            // | trs |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | trs | trs | trs |   | trs | trs | trs |
+
             bindings = <
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &kp NUMBER_6  &kp N7    &kp N8    &kp N9     &kp N0     &kp BSPC
 &trans  &kp LSHFT     &kp LCTRL     &kp LALT      &kp LGUI      &none     &none         &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none
@@ -224,7 +237,14 @@
             >;
         };
 
-        mouse { 
+        mouse {
+            // -----------------------------------------------------------------------------------------
+            // | to0 |     | SCR↓|  ↑  | SCR↑|     |   |     |     |     |     |     | DEL  |
+            // | ⌘TAB| LCLK|  ←  |  ↓  |  →  | RCLK|   |     | GUI | ALT | CTRL| SHFT|      |
+            // | trs | MB4 |     |     |     | MB5 |   |     |     |     |     |     |      |
+            //                    | trs | trs | trs |   | trs | trs | trs |
+            // Cursor cluster on left home row; SCR = scroll; MB4/MB5 = back/forward
+
             bindings = <
 &to 0        &none      SM_D    MM_U    SM_U     &none        &none   &none          &none          &none             &none           &kp DEL
 &kp RG(TAB)  &mkp LCLK  MM_L    MM_D    MM_R     &mkp RCLK    &none   &kp LEFT_GUI   &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none
@@ -234,6 +254,13 @@
         };
 
         bt_layer {
+            // -----------------------------------------------------------------------------------------
+            // | to0 |     |     |     |     | BOOT|   | BOOT|     |     |     |     |BT CLR|
+            // |BTNXT|     |     |     |     |     |   |     |     |     |     |     |      |
+            // |     |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    |     |     |     |   |     |     |     |
+            // Entered via combo (keys 38+39). BOOT = enter UF2 bootloader
+
             bindings = <
 &to 0       &none  &none  &none  &none  &bootloader    &bootloader  &none  &none  &none  &none  &bt BT_CLR
 &bt BT_NXT  &none  &none  &none  &none  &none          &none        &none  &none  &none  &none  &none
@@ -243,3 +270,5 @@
         };
     };
 };
+
+
