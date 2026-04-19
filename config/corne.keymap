@@ -172,10 +172,12 @@
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |  [   |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            // |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BSPC |
+            // |  TAB |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
+            // | GLOB |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |  [   |
+            //                    |\GUI |SPC/4|ENT/3|   |SPC/2|ENT/1|\RGUI|
+            // Hold: Q=⌘⇧F12  Home row: A=SHFT S=CTRL D=ALT F=GUI / J=GUI K=ALT L=CTRL ;=SHFT
+            // Hold: N=MO(3)  M=MUTE  [=⌘-
 
             bindings = <
 &kp ESC    &hold_btn LS(LG(F12)) Q  &kp W                     &kp E                     &kp R                 &kp T                  &kp Y                &kp U                  &kp I                          &kp O                      &kp P                            &kp BSPC
@@ -187,10 +189,10 @@
 
         nav {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  7  |  8  |  9  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | BTCLR| BT1 | BT2 |  4  |  5  |  6  |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |  1  |  2  |  3  |   |     |     |     |     |     |      |
-            //                    |  0  |     | ENT |   | ENT |     | ALT |
+            // | TO0 |     |     |     |     |     |   | V+  | ⌘←  |  ↑  | ⌘→  | BRI+| DEL  |
+            // | --- |SHFT |CTRL | ALT | GUI |     |   | V-  |  ←  |  ↓  |  →  | BRI-| MSCT |
+            // | --- |     |     |     |     |     |   |MUTE |PREV | PLY |NEXT |⌘MSC |⌃MSC  |
+            //                    | --- | --- | --- |   | --- | --- | --- |
 
             bindings = <
 &to 0   &none           &none             &none         &none         &none     &kp C_VOLUME_UP  &kp LG(LEFT_ARROW)  &kp UP_ARROW      &kp RG(RIGHT)  &kp C_BRIGHTNESS_INC                   &kp DEL
@@ -202,10 +204,11 @@
 
         Symbols {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // |  !  |  @  |  #  |  $  |  %  |  ^  |   |  &  |  *  |  (  |  )  |  -  |  <  |
+            // | --- |SHFT |CTRL | ALT | GUI |     |   |     |RGUI |RALT |RCTL |RSHT |  ]  |
+            // | --- |  `  |     |     |     |     |   |     |     |     |     |     |  \  |
+            //                    | --- | --- | --- |   | --- | --- | --- |
+            // Hold: row1 = Alt+number (Mac special chars)  ] hold=LA(])  \ hold=LS(\)=|  ` hold=~
 
             bindings = <
 &hold_btn LA(NUMBER_1) LS(NUMBER_1)  &hold_btn LA(NUMBER_2) LS(NUMBER_2)  &hold_btn RA(NUMBER_3) LS(NUMBER_3)  &hold_btn LA(NUMBER_4) LS(NUMBER_4)  &hold_btn LA(N5) LS(N5)  &hold_btn LA(NUMBER_6) LS(NUMBER_6)    &hold_btn LA(N7) LS(N7)  &hold_btn LA(N8) RS(N8)  &hold_btn LA(N9) LS(N9)  &hold_btn LA(N0) LS(N0)  &hold_btn LS(MINUS) MINUS  &hold_btn LS(LESS_THAN) LESS_THAN
@@ -216,6 +219,12 @@
         };
 
         Numbers {
+            // -----------------------------------------------------------------------------------------
+            // | --- |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
+            // | --- |SHFT |CTRL | ALT | GUI |     |   |     | GUI | ALT |CTRL |SHFT |     |
+            // | --- |     |     |     |     |     |   |     |     |     |     |     |     |
+            //                    | --- | --- | --- |   | --- | --- | --- |
+
             bindings = <
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &kp NUMBER_6  &kp N7    &kp N8    &kp N9     &kp N0     &kp BSPC
 &trans  &kp LSHFT     &kp LCTRL     &kp LALT      &kp LGUI      &none     &none         &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none
@@ -224,7 +233,13 @@
             >;
         };
 
-        mouse { 
+        mouse {
+            // -----------------------------------------------------------------------------------------
+            // | TO0 |     |SCR↓ | MM↑ |SCR↑ |     |   |     |     |     |     |     | DEL  |
+            // |⌘TAB |LCLK | MM← | MM↓ | MM→ |RCLK |   |     | GUI | ALT |CTRL |SHFT |     |
+            // | --- | MB4 |     |     |     | MB5 |   |     |     |     |     |     |     |
+            //                    | --- | --- | --- |   | --- | --- | --- |
+
             bindings = <
 &to 0        &none      SM_D    MM_U    SM_U     &none        &none   &none          &none          &none             &none           &kp DEL
 &kp RG(TAB)  &mkp LCLK  MM_L    MM_D    MM_R     &mkp RCLK    &none   &kp LEFT_GUI   &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none
@@ -234,6 +249,12 @@
         };
 
         bt_layer {
+            // -----------------------------------------------------------------------------------------
+            // | TO0 |     |     |     |     |BOOT |   |BOOT |     |     |     |     |BTCLR |
+            // |BTNXT|     |     |     |     |     |   |     |     |     |     |     |      |
+            // |     |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    |     |     |     |   |     |     |     |
+
             bindings = <
 &to 0       &none  &none  &none  &none  &bootloader    &bootloader  &none  &none  &none  &none  &bt BT_CLR
 &bt BT_NXT  &none  &none  &none  &none  &none          &none        &none  &none  &none  &none  &none
