@@ -154,6 +154,46 @@
             timeout-ms = <40>;
         };
 
+        // W+E → ?  (Swedish layout: Shift + the "+" key)
+        question_mark {
+            bindings = <&kp LS(MINUS)>;
+            key-positions = <2 3>;
+            layers = <0>;
+            timeout-ms = <40>;
+        };
+
+        // E+R → !
+        exclamation_mark {
+            bindings = <&kp LS(N1)>;
+            key-positions = <3 4>;
+            layers = <0>;
+            timeout-ms = <40>;
+        };
+
+        // R+T → @  (macOS Swedish: Option+2)
+        at_sign {
+            bindings = <&kp LA(N2)>;
+            key-positions = <4 5>;
+            layers = <0>;
+            timeout-ms = <40>;
+        };
+
+        // X+C → Copy (⌘C)
+        copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <26 27>;
+            layers = <0>;
+            timeout-ms = <40>;
+        };
+
+        // C+V → Paste (⌘V)
+        paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <27 28>;
+            layers = <0>;
+            timeout-ms = <40>;
+        };
+
         sticky_layer_2 {
             bindings = <&tog 4>;
             key-positions = <37 38 36>;
